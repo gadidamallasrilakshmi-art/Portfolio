@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gadidamalla SriLakshmi | AI & Full Stack Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    h1,h2,h3{
+      font-family:'Space Grotesk',sans-serif;
+    }
+
+    /* Animated Background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left,#4f46e530,transparent 30%),
+      radial-gradient(circle at bottom right,#06b6d430,transparent 30%),
+      radial-gradient(circle at center,#9333ea20,transparent 40%);
+      z-index:-2;
+    }
+
+    /* Glass */
+    .glass{
+      background:rgba(255,255,255,0.06);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    /* Glow */
+    .glow{
+      box-shadow:0 0 30px rgba(59,130,246,0.4);
+    }
+
+    .gradient-text{
+      background:linear-gradient(to right,#60a5fa,#a855f7,#06b6d4);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* Floating Animation */
+    .float{
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-12px);}
+      100%{transform:translateY(0px);}
+    }
+
+    /* Fade Up */
+    .fade-up{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 1s ease;
+    }
+
+    .fade-up.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Skill Bar */
+    .skill-bar{
+      height:10px;
+      border-radius:999px;
+      overflow:hidden;
+      background:#1e293b;
+    }
+
+    .skill-fill{
+      height:100%;
+      border-radius:999px;
+      background:linear-gradient(to right,#3b82f6,#8b5cf6,#06b6d4);
+    }
+
+    /* Typing */
+    .typing::after{
+      content:"|";
+      animation:blink 0.8s infinite;
+    }
+
+    @keyframes blink{
+      50%{opacity:0;}
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar{
+      width:8px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:linear-gradient(#3b82f6,#8b5cf6);
+      border-radius:10px;
+    }
+
+    /* Particles */
+    .particle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.15);
+      animation:particleMove 15s linear infinite;
+    }
+
+    @keyframes particleMove{
+      0%{
+        transform:translateY(0px);
+        opacity:0;
+      }
+      50%{
+        opacity:1;
+      }
+      100%{
+        transform:translateY(-1000px);
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Particles -->
+  <div class="particle w-2 h-2 top-[90%] left-[10%]"></div>
+  <div class="particle w-3 h-3 top-[95%] left-[70%]"></div>
+  <div class="particle w-2 h-2 top-[85%] left-[40%]"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 glass">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold gradient-text">
+        SriLakshmi
+      </h1>
+
+      <div class="hidden md:flex gap-8 text-sm">
+        <a href="#home" class="hover:text-cyan-400 transition">Home</a>
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#education" class="hover:text-cyan-400 transition">Education</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center justify-center px-6 relative">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+      <div class="fade-up">
+        <p class="text-cyan-400 mb-3 tracking-widest">
+          FUTURE AI ENGINEER
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+          Gadidamalla
+          <span class="gradient-text">
+            SriLakshmi
+          </span>
+        </h1>
+
+        <h2 class="typing text-2xl md:text-3xl mt-6 text-slate-300">
+          AI & Full Stack Developer
+        </h2>
+
+        <p class="mt-6 text-slate-400 text-lg leading-relaxed">
+          Passionate B.Tech CSE student focused on AI/ML,
+          Python, Full Stack Development, and building futuristic
+          intelligent applications with modern technologies.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="#projects"
+             class="px-7 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:scale-105 transition glow">
+            View Projects
+          </a>
+
+          <a href="#contact"
+             class="px-7 py-3 rounded-full border border-cyan-400 hover:bg-cyan-400 hover:text-black transition">
+            Contact Me
+          </a>
+        </div>
+
+        <div class="flex gap-5 mt-8 text-2xl">
+          <i class="fab fa-github hover:text-cyan-400 transition cursor-pointer"></i>
+          <i class="fab fa-linkedin hover:text-cyan-400 transition cursor-pointer"></i>
+          <i class="fab fa-instagram hover:text-cyan-400 transition cursor-pointer"></i>
+        </div>
+      </div>
+
+      <!-- Hero Card -->
+      <div class="fade-up">
+        <div class="glass rounded-3xl p-10 float glow">
+
+          <div class="flex justify-center">
+            <div class="w-40 h-40 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 p-1">
+              <div class="w-full h-full rounded-full bg-[#050816] flex items-center justify-center text-6xl">
+                👩‍💻
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <h3 class="text-3xl font-bold gradient-text">
+              Python Enthusiast
+            </h3>
+
+            <p class="text-slate-400 mt-4">
+              Building skills in AI/ML, Flutter, Web Development,
+              Git workflows, and modern software engineering.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 mt-8">
+
+            <div class="glass rounded-2xl p-4 text-center">
+              <h2 class="text-3xl font-bold text-cyan-400">8.5</h2>
+              <p class="text-slate-400 text-sm">CGPA</p>
+            </div>
+
+            <div class="glass rounded-2xl p-4 text-center">
+              <h2 class="text-3xl font-bold text-purple-400">2nd</h2>
+              <p class="text-slate-400 text-sm">Year</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="fade-up glass rounded-3xl p-10">
+        <h2 class="text-4xl font-bold gradient-text mb-8">
+          About Me
+        </h2>
+
+        <p class="text-slate-300 leading-loose text-lg">
+          I am Gadidamalla SriLakshmi, a passionate Computer Science Engineering
+          student from Malenini Lakshmaiah Women's Engineering College, Guntur.
+          I am deeply interested in Artificial Intelligence, Full Stack Development,
+          and modern software technologies.
+          <br><br>
+
+          I enjoy building intelligent applications, exploring Python programming,
+          learning AI/ML concepts, and improving my UI/UX development skills.
+          My goal is to become a highly skilled AI Engineer and Full Stack Developer
+          capable of building impactful real-world solutions.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-28 px-6">
+
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center gradient-text mb-16 fade-up">
+        Skills & Technologies
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Skill -->
+        <div class="glass rounded-3xl p-6 fade-up">
+          <div class="flex justify-between mb-3">
+            <span>Python</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill w-[90%]"></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-6 fade-up">
+          <div class="flex justify-between mb-3">
+            <span>AI/ML</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill w-[75%]"></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-6 fade-up">
+          <div class="flex justify-between mb-3">
+            <span>HTML</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill w-[85%]"></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-6 fade-up">
+          <div class="flex justify-between mb-3">
+            <span>Git & GitHub</span>
+            <span>70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill w-[70%]"></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-6 fade-up">
+          <div class="flex justify-between mb-3">
+            <span>VS Code</span>
+            <span>88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill w-[88%]"></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-6 fade-up">
+          <div class="flex justify-between mb-3">
+            <span>Full Stack Learning</span>
+            <span>72%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill w-[72%]"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-28 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center gradient-text mb-16 fade-up">
+        Featured Projects
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project -->
+        <div class="glass rounded-3xl p-7 hover:-translate-y-3 transition duration-500 fade-up">
+          <div class="text-5xl mb-5">🤖</div>
+          <h3 class="text-2xl font-bold mb-4">AI Chatbot</h3>
+          <p class="text-slate-400">
+            Intelligent chatbot using Python and AI APIs
+            capable of answering user queries smartly.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-500/20 rounded-full text-sm">Python</span>
+            <span class="px-3 py-1 bg-purple-500/20 rounded-full text-sm">AI</span>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div class="glass rounded-3xl p-7 hover:-translate-y-3 transition duration-500 fade-up">
+          <div class="text-5xl mb-5">📚</div>
+          <h3 class="text-2xl font-bold mb-4">Smart Notes Generator</h3>
+          <p class="text-slate-400">
+            AI-powered notes summarizer that creates
+            smart educational notes for students.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-sm">AI/ML</span>
+            <span class="px-3 py-1 bg-pink-500/20 rounded-full text-sm">HTML</span>
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div class="glass rounded-3xl p-7 hover:-translate-y-3 transition duration-500 fade-up">
+          <div class="text-5xl mb-5">🌐</div>
+          <h3 class="text-2xl font-bold mb-4">Portfolio Website</h3>
+          <p class="text-slate-400">
+            Modern futuristic portfolio with advanced UI/UX,
+            animations, and responsive design.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-green-500/20 rounded-full text-sm">HTML</span>
+            <span class="px-3 py-1 bg-blue-500/20 rounded-full text-sm">Tailwind</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-28 px-6">
+
+    <div class="max-w-5xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center gradient-text mb-16 fade-up">
+        Education
+      </h2>
+
+      <div class="glass rounded-3xl p-10 fade-up">
+
+        <div class="flex items-start gap-6">
+          <div class="w-5 h-5 rounded-full bg-cyan-400 mt-2 glow"></div>
+
+          <div>
+            <h3 class="text-2xl font-bold">
+              B.Tech - Computer Science Engineering
+            </h3>
+
+            <p class="text-cyan-400 mt-2">
+              Malenini Lakshmaiah Women's Engineering College, Guntur
+            </p>
+
+            <div class="mt-5 flex flex-wrap gap-4">
+              <span class="glass px-5 py-2 rounded-full">
+                2nd Year
+              </span>
+
+              <span class="glass px-5 py-2 rounded-full">
+                CGPA: 8.5
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="py-28 px-6">
+
+    <div class="max-w-6xl mx-auto">
+
+      <div class="glass rounded-3xl p-12 text-center fade-up">
+
+        <h2 class="text-4xl font-bold gradient-text mb-8">
+          Vision & Goals
+        </h2>
+
+        <p class="text-slate-300 text-lg leading-loose max-w-4xl mx-auto">
+          My vision is to become a highly skilled AI Engineer and Full Stack
+          Developer capable of building innovative technologies that solve
+          real-world problems. I believe in continuous learning, consistency,
+          and creating impactful digital experiences through modern software development.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-14">
+
+          <div class="glass rounded-2xl p-8">
+            <h3 class="text-5xl font-bold gradient-text">AI</h3>
+            <p class="mt-3 text-slate-400">Machine Learning Enthusiast</p>
+          </div>
+
+          <div class="glass rounded-2xl p-8">
+            <h3 class="text-5xl font-bold gradient-text">FS</h3>
+            <p class="mt-3 text-slate-400">Full Stack Learner</p>
+          </div>
+
+          <div class="glass rounded-2xl p-8">
+            <h3 class="text-5xl font-bold gradient-text">∞</h3>
+            <p class="mt-3 text-slate-400">Continuous Growth Mindset</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-28 px-6">
+
+    <div class="max-w-4xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center gradient-text mb-14 fade-up">
+        Contact Me
+      </h2>
+
+      <form class="glass rounded-3xl p-10 space-y-6 fade-up">
+
+        <input type="text"
+               placeholder="Your Name"
+               class="w-full p-4 rounded-2xl bg-[#0f172a] border border-slate-700 outline-none focus:border-cyan-400"/>
+
+        <input type="email"
+               placeholder="Your Email"
+               class="w-full p-4 rounded-2xl bg-[#0f172a] border border-slate-700 outline-none focus:border-cyan-400"/>
+
+        <textarea rows="5"
+                  placeholder="Your Message"
+                  class="w-full p-4 rounded-2xl bg-[#0f172a] border border-slate-700 outline-none focus:border-cyan-400"></textarea>
+
+        <button class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 font-semibold hover:scale-[1.02] transition">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800 text-center">
+
+    <h2 class="text-2xl font-bold gradient-text">
+      Gadidamalla SriLakshmi
+    </h2>
+
+    <p class="text-slate-500 mt-3">
+      "Building the future with AI, creativity, and code."
+    </p>
+
+    <div class="flex justify-center gap-6 mt-6 text-2xl">
+      <i class="fab fa-github hover:text-cyan-400 transition"></i>
+      <i class="fab fa-linkedin hover:text-cyan-400 transition"></i>
+      <i class="fab fa-instagram hover:text-cyan-400 transition"></i>
+    </div>
+
+    <p class="text-slate-600 mt-8 text-sm">
+      © 2026 All Rights Reserved
+    </p>
+
+  </footer>
+
+  <!-- Back To Top -->
+  <button id="topBtn"
+          class="fixed bottom-6 right-6 hidden bg-gradient-to-r from-blue-500 to-purple-500 p-4 rounded-full glow">
+    ↑
+  </button>
+
+  <!-- JS -->
+  <script>
+
+    // Fade Animation
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el=>{
+      observer.observe(el);
+    });
+
+    // Back To Top
+    const topBtn=document.getElementById("topBtn");
+
+    window.addEventListener("scroll",()=>{
+      if(window.scrollY>300){
+        topBtn.style.display="block";
+      }else{
+        topBtn.style.display="none";
+      }
+    });
+
+    topBtn.addEventListener("click",()=>{
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+    });
+
+  </script>
+
+</body>
+</html>
